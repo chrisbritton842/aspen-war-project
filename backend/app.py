@@ -17,6 +17,7 @@ class Statistic(db.Model):
     longest_losing_streak = db.Column(db.Integer, nullable=False)
     total_games = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    updated_at = db.Column(db.DateTime, nullable=False, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     def to_dict(self):
         return {
